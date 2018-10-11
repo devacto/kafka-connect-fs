@@ -19,18 +19,14 @@ public class FilenameFileReader extends AbstractFileReader<FilenameFileReader.Fi
 
     private final FilenameOffset offset;
     private String stringFilePath;
-    private String stringFileModifiedTime;
     private Schema schema;
 
-    // Constructor
     public FilenameFileReader(FileSystem fs, Path filePath, Map<String, Object> config) throws IOException {
         super(fs, filePath, new FilenameToStruct(), config);
         this.stringFilePath = filePath.toString();
 
         this.offset = new FilenameOffset(0);
-        this.schema = SchemaBuilder.struct()
-                .field("filename", Schema.STRING_SCHEMA)
-                .build();
+        this.schema = SchemaBuilder.struct().field("filename", Schema.STRING_SCHEMA).build();
     }
 
     @Override
@@ -64,7 +60,6 @@ public class FilenameFileReader extends AbstractFileReader<FilenameFileReader.Fi
         if (offset.getRecordOffset() < 0) {
             throw new IllegalArgumentException("Record offset must be greater than 0");
         }
-        //this.offset.setOffset(0);
     }
 
     @Override
