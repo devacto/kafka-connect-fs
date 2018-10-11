@@ -35,7 +35,6 @@ public class FilenameFileReader extends AbstractFileReader<FilenameFileReader.Fi
 
     @Override
     protected FilenameRecord nextRecord() {
-        log.info("nextRecord(): " + this.stringFilePath);
         if (!hasNext()) {
             throw new NoSuchElementException("There are no more records in file: " + getFilePath());
         }
@@ -49,13 +48,10 @@ public class FilenameFileReader extends AbstractFileReader<FilenameFileReader.Fi
     // Since we are not reading the file, we will always return false. No more line within the file.
     @Override
     public boolean hasNext() {
-        log.info("hasNext() with recordOffSet(): " + String.valueOf(this.offset.getRecordOffset()));
         if (this.offset.getRecordOffset() < 2) {
-            log.info("hasNext(): TRUE");
             this.offset.setOffset(this.offset.getRecordOffset() + 1);
             return true;
         } else {
-            log.info("hasNext(): FALSE");
             return false;
         }
     }
