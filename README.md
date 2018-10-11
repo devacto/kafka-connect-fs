@@ -9,7 +9,7 @@ topic.
 
 ## Debugging the connector
 
-`KAFKA_DEBUG=y DEBUG_SUSPEND_FLAG=y /Users/victor/dev/work/sia/confluent-5.0.0/bin/connect-standalone worker.properties mmoliar-source-config.properties`
+`KAFKA_DEBUG=y DEBUG_SUSPEND_FLAG=y CLASSPATH="$(find /Users/victor/dev/work/sia/kafka-experiment/kafka-connect-fs/target/ -type f -name '*.jar'| grep '\-package' | tr '\n' ':')" /Users/victor/dev/work/sia/confluent-5.0.0/bin/connect-standalone worker.properties mmoliar-source-config.properties`
 
 ## Kafka Connect FileSystem Connector
 
