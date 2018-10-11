@@ -2,10 +2,14 @@
 [![Build Status](https://travis-ci.org/mmolimar/kafka-connect-fs.svg?branch=master)](https://travis-ci.org/mmolimar/kafka-connect-fs)
 [![Coverage Status](https://coveralls.io/repos/github/mmolimar/kafka-connect-fs/badge.svg?branch=master)](https://coveralls.io/github/mmolimar/kafka-connect-fs?branch=master)
 
-### This Fork
+## This Fork
 
 This fork adds a new reader called FilenameReader. FilenameReader will only put the name of the file inside the Kafka
 topic.
+
+## Debugging the connector
+
+`KAFKA_DEBUG=y DEBUG_SUSPEND_FLAG=y /Users/victor/dev/work/sia/confluent-5.0.0/bin/connect-standalone worker.properties mmoliar-source-config.properties`
 
 ## Kafka Connect FileSystem Connector
 
