@@ -7,28 +7,28 @@
 This fork adds a new reader called FilenameReader. FilenameReader will only put the name of the file inside the Kafka
 topic.
 
-### Kafka Connect FileSystem Connector
+## Kafka Connect FileSystem Connector
 
 **kafka-connect-fs** is a [Kafka Connector](http://kafka.apache.org/documentation.html#connect) 
 for reading records from files in the file systems specified and load them into Kafka.
 
 Documentation for this connector can be found [here](http://kafka-connect-fs.readthedocs.io/).
 
-### Development
+## Development
 
 To build a development version you'll need a recent version of Kafka. You can build
 kafka-connect-fs with Maven using the standard lifecycle phases.
 
-### FAQ
+## FAQ
 
 Some frequently asked questions on Kafka Connect FileSystem Connector can be found here -
 http://kafka-connect-fs.readthedocs.io/en/latest/faq.html
 
-### Contribute
+## Contribute
 
 - Source Code: https://github.com/mmolimar/kafka-connect-fs
 - Issue Tracker: https://github.com/mmolimar/kafka-connect-fs/issues
 
-### License
+## License
 
 Released under the Apache License, version 2.0.
