@@ -1,4 +1,13 @@
-# Kafka Connect FileSystem Connector [![Build Status](https://travis-ci.org/mmolimar/kafka-connect-fs.svg?branch=master)](https://travis-ci.org/mmolimar/kafka-connect-fs)[![Coverage Status](https://coveralls.io/repos/github/mmolimar/kafka-connect-fs/badge.svg?branch=master)](https://coveralls.io/github/mmolimar/kafka-connect-fs?branch=master)
+# Kafka Connect FileSystem Connector
+[![Build Status](https://travis-ci.org/mmolimar/kafka-connect-fs.svg?branch=master)](https://travis-ci.org/mmolimar/kafka-connect-fs)
+[![Coverage Status](https://coveralls.io/repos/github/mmolimar/kafka-connect-fs/badge.svg?branch=master)](https://coveralls.io/github/mmolimar/kafka-connect-fs?branch=master)
+
+## This Fork
+
+This fork adds a new reader called FilenameReader. FilenameReader will only put the name of the file inside the Kafka
+topic.
+
+## Kafka Connect FileSystem Connector
 
 **kafka-connect-fs** is a [Kafka Connector](http://kafka.apache.org/documentation.html#connect) 
 for reading records from files in the file systems specified and load them into Kafka.
