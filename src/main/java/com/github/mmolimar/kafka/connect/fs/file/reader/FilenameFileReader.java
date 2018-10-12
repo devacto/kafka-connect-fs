@@ -1,6 +1,5 @@
 package com.github.mmolimar.kafka.connect.fs.file.reader;
 
-import com.github.mmolimar.kafka.connect.fs.FsSourceTask;
 import com.github.mmolimar.kafka.connect.fs.file.Offset;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
@@ -44,8 +43,11 @@ public class FilenameFileReader extends AbstractFileReader<FilenameFileReader.Fi
     // Since we are not reading the file, we will always return false. No more line within the file.
     @Override
     public boolean hasNext() {
-        if (this.offset.getRecordOffset() < 2) {
+        if (this.offset.getRecordOffset() == 0) {
             this.offset.setOffset(this.offset.getRecordOffset() + 1);
+            return true;
+        } else if (this.offset.getRecordOffset() == 1) {
+            // return true but not adding the record offset because then it will become 2 which throws an exception.
             return true;
         } else {
             return false;
@@ -60,6 +62,7 @@ public class FilenameFileReader extends AbstractFileReader<FilenameFileReader.Fi
         if (offset.getRecordOffset() < 0) {
             throw new IllegalArgumentException("Record offset must be greater than 0");
         }
+        this.offset.setOffset(offset.getRecordOffset());
     }
 
     @Override
